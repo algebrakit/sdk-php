@@ -1,0 +1,4 @@
+/demo                  export-ignore
+/tests                 export-ignore
+/openapi-bundled.yaml  export-ignore
+/.gitignore            export-ignore
