@@ -1,0 +1,27 @@
+name: Release
+
+# Runs when you push a version tag such as v1.1.0. Packagist picks up the tag by itself;
+# this workflow only creates the GitHub release, with the notes from CHANGELOG.md.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Create the GitHub release from CHANGELOG.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          notes=$(awk -v heading="## ${GITHUB_REF_NAME#v}" '$0 == heading { found = 1; next } /^## / { found = 0 } found' CHANGELOG.md)
+          if [ -z "$notes" ]; then
+            echo "::error::CHANGELOG.md has no section '## ${GITHUB_REF_NAME#v}'"
+            exit 1
+          fi
+          gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --notes "$notes"
