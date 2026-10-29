@@ -5,4 +5,5 @@
 /.gitattributes      export-ignore
 /.gitignore          export-ignore
 /phpunit.xml.dist    export-ignore
+/openapi-bundled.yaml  export-ignore
 /CHANGELOG.md        export-ignore
