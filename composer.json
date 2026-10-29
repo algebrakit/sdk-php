@@ -1,9 +1,17 @@
 {
     "name": "algebrakit/sdk-php",
-    "description": "Official PHP SDK for the Algebrakit Web Service API — create exercise sessions, retrieve scores, lock/unlock sessions, validate exercises, and fetch session info.",
+    "description": "Official PHP SDK for the Algebrakit API: create exercise sessions, get scores and session info, lock sessions and validate exercises.",
     "type": "library",
-    "keywords": ["algebrakit", "sdk", "math", "education", "exercises", "api-client"],
-    "homepage": "https://github.com/algebrakit-org/sdk-php",
+    "keywords": [
+        "algebrakit",
+        "sdk",
+        "api-client",
+        "math",
+        "education",
+        "edtech",
+        "exercises"
+    ],
+    "homepage": "https://github.com/algebrakit/sdk-php",
     "license": "MIT",
     "authors": [
         {
@@ -12,15 +20,16 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/algebrakit-org/sdk-php/issues",
-        "source": "https://github.com/algebrakit-org/sdk-php"
+        "issues": "https://github.com/algebrakit/sdk-php/issues",
+        "source": "https://github.com/algebrakit/sdk-php",
+        "docs": "https://docs.algebrakit.com/pages/320-SDK/"
     },
     "require": {
-        "php": "^8.0",
-        "guzzlehttp/guzzle": "^7.0"
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.9"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "psr-4": {
@@ -34,5 +43,9 @@
         "psr-4": {
             "Algebrakit\\SDK\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "demo": "php demo/tour.php"
     }
 }

@@ -1,4 +1,9 @@
-/demo                  export-ignore
-/tests                 export-ignore
+# Leave development files out of the package that Composer downloads
+/.github             export-ignore
+/demo                export-ignore
+/tests               export-ignore
+/.gitattributes      export-ignore
+/.gitignore          export-ignore
+/phpunit.xml.dist    export-ignore
 /openapi-bundled.yaml  export-ignore
-/.gitignore            export-ignore
+/CHANGELOG.md        export-ignore
